@@ -1,3 +1,4 @@
+// styling in js dom (CSS) . the stlye property name should be camel case
 const color = document.querySelector('.color_heading');
 color.style.color = 'gray';
 
