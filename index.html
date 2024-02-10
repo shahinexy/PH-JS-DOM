@@ -6,6 +6,58 @@
     <title>Document Object Model</title>
 </head>
 <body>
-    
+    <h1>I am learning Javascript Dom</h1>
+    <ul class="color">
+        <li id="html-color">HTML</li>
+        <li>CSS</li>
+        <li>JAVASCRIPT</li>
+    </ul>
+    <h1 id="dom">DOM mean Document Object Model</h1>
+    <ul class="color">
+        <li>Apple</li>
+        <li>Mango</li>
+        <li>Banana</li>
+    </ul>
+
+
+
+    <!-- javaScript  -->
+    <script>
+        // use getElementsByTagName to get the html tage.
+        const tags = document.getElementsByTagName('h1');
+        for(const tag of tags){
+            console.log(tag);
+        }
+
+        // use getElementById to get the html id attribute
+        const id = document.getElementById('dom');
+        id.innerText = 'This Heading tag changed by Js DOM';
+
+        // use getElementById to get the html class attribute
+        const classes = document.getElementsByClassName('color');
+        for(const element of classes){
+            console.log(element.innerText);
+        }
+
+        // use querySelector to get class, id and tag  
+        // querySelector for class
+        const query = document.querySelector('.color');
+        query.style.color = 'red'
+        //querySelector for id 
+        const queryid = document.querySelector('#html-color');
+        queryid.style.color = 'green'
+
+        //querySelector 
+        // If you use querySelector then you will get the only first element.
+        const queryonly = document.querySelector('li')
+        console.log(queryonly);
+
+        //querySelector All
+        // If you use querySelector All then you will get all of the elemnt 
+        const queryAll = document.querySelectorAll('li')
+        console.log(queryAll);
+
+
+    </script>
 </body>
 </html>
