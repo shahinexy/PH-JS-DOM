@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Delegate </title>
+</head>
+<body>
+    <h1>Explore Event Delegate</h1>
+    <ul id="ul_list">
+        <li class="item">Lorem, ipsum dolor.</li>
+        <li class="item">Possimus, distinctio aspernatur.</li>
+        <li class="item">Fugiat, nam harum?</li>
+        <li class="item">Libero, voluptatibus aliquam?</li>
+        <li class="item">Minima, quibusdam molestiae.</li>
+        <li class="item">Eos, delectus nulla?</li>
+    </ul>
+    <button id="add_btn">Add Item</button>
+
+
+    <!-- js  -->
+    <script>
+        // const items = document.getElementsByClassName('item');
+        // for(const item of items){
+        //     item.addEventListener('click', function(even){
+        //         even.target.parentNode.removeChild(even.target);
+        //     })
+        // }
+
+
+        // ======== delegate way ==========
+
+        document.getElementById('ul_list').addEventListener('click', function(event){
+            event.target.parentNode.removeChild(event.target)
+        })
+
+        document.getElementById('add_btn').addEventListener('click', function(){
+            const ul = document.getElementById('ul_list');
+            const li = document.createElement('li');
+            li.innerText = 'Breand new Item';
+            li.classList.add('item')
+            ul.appendChild(li);
+        })
+        
+    </script>
+</body>
+</html>
