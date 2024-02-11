@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Items</title>
+</head>
+<body>
+    <h1 id="delete_text">Delete Me</h1>
+    <input id="delete_input" type="text" placeholder="Type 'delete' for confirmetion"> 
+    <button id="delete_btn" disabled>Delete</button>
+
+
+    <script>
+        const deleteInput = document.getElementById('delete_input');
+        const deletebtn = document.getElementById('delete_btn');
+        
+        // use condition to disable and bisable the delete button
+        deleteInput.addEventListener('keyup', function(){
+            if(deleteInput.value === 'delete'){
+            deletebtn.removeAttribute('disabled')
+        }
+        else(
+            deletebtn.setAttribute('disabled', true)
+        )
+        })
+
+        // delete the text when you click on delete button
+        document.getElementById('delete_btn').addEventListener('click', function(){
+            const deleteText = document.getElementById('delete_text')
+            deleteText.style.display = 'none';
+        })
+    </script>
+</body>
+</html>
