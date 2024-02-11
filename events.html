@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>events</title>
+</head>
+<body>
+    <h1 title="Learning DOM events">Dom eventlistener</h1>
+    <button onclick="console.log('onclick event in html file');">Click me</button>
+    <!-- 1st way   unused -->
+    <button onclick="document.body.style.backgroundColor='red'">Make bg red</button>
+    <!-- 2nd way  some time used -->
+    <button onclick="makeGreen()">Make bg green</button>
+    <!-- 3rd way  unused -->
+    <button id="make_bule">Make bg blue</button>
+    <!-- 4th way  mostly used -->
+    <button id="make_yellow">Make bg yelllow</button>
+    <!-- 5th way  mostly used  (importent)-->
+    <button id="make_purple">Make bg puple</button>
+
+    <script> 
+        // 2nd way 
+        function makeGreen(){
+            document.body.style.backgroundColor = 'green';
+        }
+
+        // 3rd way
+        const blueBg = document.getElementById('make_bule');
+        blueBg.onclick = makeBlue;
+        function makeBlue(){
+            document.body.style.backgroundColor = 'blue';
+        }
+        
+        // 4th way 
+        const yellowBg = document.getElementById('make_yellow');
+        yellowBg.addEventListener('click', function makeYellow(){
+            document.body.style.backgroundColor = 'yellow';
+        })
+        
+        // 5th way (importent)
+        document.getElementById('make_purple').addEventListener('click', function(){
+            document.body.style.backgroundColor = 'purple';
+        })
+    </script>
+</body>
+</html>
