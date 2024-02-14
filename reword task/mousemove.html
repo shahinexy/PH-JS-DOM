@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Move</title>
+    <style>
+        h1 {
+            color: blueviolet;
+            font-size: 30px;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .container {
+            background-color: cornflowerblue;
+            height: 100vh;
+        }
+
+        #ball {
+            background-color: crimson;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Move the ball using your mouse cursor</h1>
+    <div class="container">
+        <div id="ball"></div>
+    </div>
+
+    <!-- js -->
+    <script>
+        const container = document.querySelector('.container');
+        const ball = document.getElementById('ball');
+
+        let initialTop, initialLeft;
+
+        function handleMove(e) {
+            const left = e.clientX - initialLeft;
+            const top = e.clientY - initialTop;
+            ball.style.top = `${top}px`
+            ball.style.left = `${left}px`
+        }
+
+        ball.addEventListener('mousedown', function (e) {
+            if (!initialTop && !initialLeft) {
+                initialTop = e.clientY;
+                initialLeft = e.clientX;
+            }
+            container.addEventListener('mousemove', handleMove)
+        })
+
+        ball.addEventListener('mouseup', function () {
+            container.removeEventListener('mousemove', handleMove);
+        })
+    </script>
+</body>
+
+</html>
