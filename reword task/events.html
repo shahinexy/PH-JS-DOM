@@ -20,23 +20,57 @@
     <main>
         <h1>learn more about DOM events</h1>
         <div class="container">
-            <h3>Your name</h3>
-            <input id="naem" type="text" placeholder="enter your name">
+            <h3>Your email</h3>
+            <input id="email" type="email" placeholder="enter your email">
             <h3>Designetiopn</h3>
             <select name="" id="select">
-                <option value="">Font-end developer</option>
-                <option value="">Back-end developer</option>
-                <option value="">Full-stack developer</option>
+                <option value="Font-end developer">Font-end developer</option>
+                <option value="Back-end ">Back-end developer</option>
+                <option value="Full-stack developer">Full-stack developer</option>
             </select>
-            <h3>Your email</h3>
-            <input id="mail" type="text" placeholder="enter your mail">
+            <h3>Your password</h3>
+            <input id="password" type="password" placeholder="enter your password">
         </div>
     </main>
 
 
     <!-- js  -->
     <script>
-
+        const  email = document.getElementById('email');
+        const  dasignetion = document.getElementById('select');
+        const  password = document.getElementById('password');
+        // onchage
+        email.addEventListener('change', function(e){
+            console.log('change',e.target.value);
+        })
+        // input
+        email.addEventListener('input', function(e){
+            console.log('input',e.target.value);
+        })
+        // change
+        dasignetion.addEventListener('change', function(e){
+            console.log(e.target.value);
+        })
+        // blur
+        // password.addEventListener('blur', function(e){
+        //     console.log(e.target.value);
+        // })
+        // focus
+        password.addEventListener('focus', function(e){
+            console.log('focus',e);
+            e.target.style.backgroundColor = 'yellow';
+        })
+        //blur
+        password.addEventListener('blur', function(e){
+            console.log('blur',e);
+            e.target.style.backgroundColor = '';
+        })
+        // window  // load
+        window.addEventListener('load', function(){
+            console.log('window loading...');
+            alert('pleace wait...')
+        })
+        
     </script>
 </body>
 
